@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Uso da Classe TraducaoJSON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/materia/bootstrap.css">
+</head>
+<body>
+    <div class="py-5">
+        <div class="container">
+            <h1>Exemplo de Uso da Classe TraducaoJSON</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive" >
+                        <table class="table table-bordered " id="dados">
+                            <thead>
+                                <tr>
+                                    <th>Chave</th>
+                                    <th>Tradução</th>
+                                    <th>Ocorrência</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody> 
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main2.js"></script>
+    <script>
+        // URL do JSON
+        const urlJSON = "https://raw.githubusercontent.com/BetinRibeiro/web-text-translation/main/dicionario_ordenado.json";
+
+        // Exemplo de uso:
+        carregarJSONDaURL(urlJSON)
+          .then(jsonArray => {
+            const traducaoJSON = new TraducaoJSON(jsonArray);
+            traducaoJSON.inserirNaTabela();
+          })
+          .catch(error => {
+            console.error("Erro ao carregar o JSON da URL:", error);
+          });
+    </script>
+</body>
+</html>
