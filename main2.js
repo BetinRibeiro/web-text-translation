@@ -24,7 +24,7 @@ class TraducaoJSON {
     const tabela = document.getElementById("dados"); // Obtém a tabela HTML pelo ID 'dados'
     
     dados.forEach(item => { // Para cada objeto traduzido
-      const linha = document.createElement("tr"); // Cria uma nova linha na tabela
+      const linha = document.createElement("tr border"); // Cria uma nova linha na tabela
       const colunaChave = document.createElement("td"); // Cria uma coluna para a chave
       colunaChave.textContent = item.chave; // Define o texto da coluna como a chave do objeto
       const colunaTraducao = document.createElement("td"); // Cria uma coluna para a tradução
